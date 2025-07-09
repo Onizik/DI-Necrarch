@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1fq3wxtc0by8"]
+
+[ext_resource type="Texture2D" uid="uid://68m4rcr5b24e" path="res://assets/sprites/test/test_map.png" id="1_lphgc"]
+[ext_resource type="Texture2D" uid="uid://cvmhuhmoj30qx" path="res://assets/sprites/test/112/first.png" id="2_g2dpn"]
+[ext_resource type="Texture2D" uid="uid://dwnnywtin8arw" path="res://assets/sprites/test/112/first_pressed.png" id="3_jry1f"]
+[ext_resource type="Texture2D" uid="uid://by3nfs4rvu64y" path="res://assets/sprites/test/112/first_hover.png" id="4_m5sv8"]
+[ext_resource type="Texture2D" uid="uid://pwm6gxph5ryj" path="res://assets/sprites/test/112/second.png" id="5_1vs06"]
+[ext_resource type="Texture2D" uid="uid://dlptcgrcxj2bl" path="res://assets/sprites/test/112/second_pressed.png" id="6_ofj3e"]
+[ext_resource type="Texture2D" uid="uid://bgs2mmaqfj6dn" path="res://assets/sprites/test/112/second_hover.png" id="7_4rs11"]
+
+[node name="Map" type="Node2D"]
+
+[node name="main_map" type="Sprite2D" parent="."]
+texture = ExtResource("1_lphgc")
+
+[node name="first" type="TextureButton" parent="main_map"]
+offset_left = -776.0
+offset_top = -368.0
+offset_right = -449.0
+offset_bottom = 142.0
+texture_normal = ExtResource("2_g2dpn")
+texture_pressed = ExtResource("3_jry1f")
+texture_hover = ExtResource("4_m5sv8")
+
+[node name="second" type="TextureButton" parent="main_map"]
+offset_left = -600.0
+offset_top = -288.0
+offset_right = -139.0
+offset_bottom = 423.0
+texture_normal = ExtResource("5_1vs06")
+texture_pressed = ExtResource("6_ofj3e")
+texture_hover = ExtResource("7_4rs11")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bt0e4vtk03xei"]
 
 [ext_resource type="Texture2D" uid="uid://k6rhkfkc6eh3" path="res://assets/sprites/test/1test.png" id="1_q75hn"]
-[ext_resource type="Texture2D" uid="uid://68m4rcr5b24e" path="res://assets/sprites/test/test_map.png" id="2_l57sq"]
+[ext_resource type="PackedScene" uid="uid://848ru1ko3xo" path="res://assets/scenes/map.tscn" id="2_l57sq"]
 
 [node name="main_map" type="Node2D"]
 
@@ -9,8 +9,6 @@
 position = Vector2(960, 540)
 texture = ExtResource("1_q75hn")
 
-[node name="map" type="Sprite2D" parent="."]
-position = Vector2(1192, 536)
-rotation = 0.120428
-scale = Vector2(0.642222, 0.642222)
-texture = ExtResource("2_l57sq")
+[node name="Map" parent="." instance=ExtResource("2_l57sq")]
+position = Vector2(1184, 424)
+scale = Vector2(0.8, 0.8)
