@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://tt802vpyf0xt"]
+[gd_scene load_steps=8 format=3 uid="uid://tt802vpyf0xt"]
 
+[ext_resource type="Script" uid="uid://3htuui5hgp8t" path="res://assets/scenes/menu_map.gd" id="1_38ndd"]
 [ext_resource type="Texture2D" uid="uid://c4ri2yrd3e6i0" path="res://assets/sprites/test/112/menu.png" id="1_v4ulj"]
 [ext_resource type="Texture2D" uid="uid://c30dmkyms8hka" path="res://assets/sprites/test/112/button.png" id="2_38ndd"]
 [ext_resource type="Texture2D" uid="uid://bpwuyfcoojpxp" path="res://assets/sprites/test/112/button_pressed.png" id="3_qk1km"]
@@ -16,6 +17,7 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="menu_map" type="Node2D"]
+script = ExtResource("1_38ndd")
 
 [node name="Menu" type="Sprite2D" parent="."]
 texture = ExtResource("1_v4ulj")
@@ -89,3 +91,7 @@ text = "Send gift"
 label_settings = SubResource("LabelSettings_43hxv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Menu/fight" to="." method="_on_fight_pressed"]
+[connection signal="pressed" from="Menu/talk" to="." method="_on_talk_pressed"]
+[connection signal="pressed" from="Menu/gift" to="." method="_on_gift_pressed"]

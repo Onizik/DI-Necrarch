@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://848ru1ko3xo"]
+[gd_scene load_steps=13 format=3 uid="uid://848ru1ko3xo"]
 
 [ext_resource type="Texture2D" uid="uid://68m4rcr5b24e" path="res://assets/sprites/test/test_map.png" id="1_lphgc"]
+[ext_resource type="Script" uid="uid://5axxxi4yrrtu" path="res://assets/scenes/map.gd" id="1_ofj3e"]
 [ext_resource type="Texture2D" uid="uid://cvmhuhmoj30qx" path="res://assets/sprites/test/112/first.png" id="2_g2dpn"]
 [ext_resource type="Texture2D" uid="uid://dwnnywtin8arw" path="res://assets/sprites/test/112/first_pressed.png" id="3_jry1f"]
 [ext_resource type="Texture2D" uid="uid://by3nfs4rvu64y" path="res://assets/sprites/test/112/first_hover.png" id="4_m5sv8"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cswlvgbrxuqjf" path="res://assets/sprites/test/112/fifth.png" id="10_ofj3e"]
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_ofj3e")
 
 [node name="main_map" type="Sprite2D" parent="."]
 texture = ExtResource("1_lphgc")
@@ -27,6 +29,7 @@ texture_pressed = ExtResource("3_jry1f")
 texture_hover = ExtResource("4_m5sv8")
 
 [node name="menu_map" parent="main_map/first" instance=ExtResource("5_ofj3e")]
+visible = false
 z_index = 1
 position = Vector2(136, 232)
 scale = Vector2(0.6, 0.6)
@@ -40,7 +43,8 @@ texture_normal = ExtResource("5_1vs06")
 texture_pressed = ExtResource("6_ofj3e")
 texture_hover = ExtResource("7_4rs11")
 
-[node name="menu_map2" parent="main_map/second" instance=ExtResource("5_ofj3e")]
+[node name="menu_map" parent="main_map/second" instance=ExtResource("5_ofj3e")]
+visible = false
 z_index = 1
 position = Vector2(240, 336)
 scale = Vector2(0.6, 0.6)
@@ -53,3 +57,6 @@ texture = ExtResource("9_1vs06")
 
 [node name="fifth" type="Sprite2D" parent="main_map"]
 texture = ExtResource("10_ofj3e")
+
+[connection signal="pressed" from="main_map/first" to="." method="_on_first_pressed"]
+[connection signal="pressed" from="main_map/second" to="." method="_on_second_pressed"]

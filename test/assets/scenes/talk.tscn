@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://2upfkrsle2n5"]
+
+[ext_resource type="Script" uid="uid://b7urhbxnwygk8" path="res://assets/scenes/talk.gd" id="1_2dum8"]
+[ext_resource type="Texture2D" uid="uid://k6rhkfkc6eh3" path="res://assets/sprites/test/1test.png" id="1_l47x7"]
+[ext_resource type="Texture2D" uid="uid://p8duuqrf7trj" path="res://assets/sprites/test/talk/art.png" id="2_gckc2"]
+[ext_resource type="Texture2D" uid="uid://ddwtj7bp7xa5y" path="res://assets/sprites/test/talk/text.png" id="3_s8hnn"]
+[ext_resource type="Texture2D" uid="uid://bgtt6fhfdyw4" path="res://assets/sprites/test/talk/button.png" id="5_2dum8"]
+
+[sub_resource type="Theme" id="Theme_2dum8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xwouu"]
+font_size = 25
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="talk" type="Node2D"]
+script = ExtResource("1_2dum8")
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(7.70092e-07, 0.832221, 0.834443, 1)
+position = Vector2(960, 540)
+texture = ExtResource("1_l47x7")
+
+[node name="art" type="Sprite2D" parent="."]
+position = Vector2(1360, 448)
+texture = ExtResource("2_gckc2")
+
+[node name="text_bg" type="Sprite2D" parent="."]
+position = Vector2(456, 488)
+texture = ExtResource("3_s8hnn")
+
+[node name="main_text" type="RichTextLabel" parent="text_bg"]
+offset_left = -280.0
+offset_top = -384.0
+offset_right = 280.0
+offset_bottom = 272.0
+theme = SubResource("Theme_2dum8")
+bbcode_enabled = true
+text = "Я ебал собак и детей
+Об этом знают все 
+На картинке слева вы видите кривых человечков, которых я оформил чисто по приколу. Чтобы хоть как-то обозначить в схемах и мемах, как примерно будет выглядеть данный сегмент.
+На самом деле, я уже заебался придумывать, что бы такого прикольного сюда написать.
+Какую кнопку хочешь жмать? Первую или вторую?"
+threaded = true
+progress_bar_delay = 70000
+
+[node name="first" type="TextureButton" parent="text_bg"]
+offset_left = -288.0
+offset_top = 288.0
+offset_right = 72.0
+offset_bottom = 436.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_2dum8")
+
+[node name="text" type="Label" parent="text_bg/first"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 342.0
+offset_bottom = 137.0
+text = "Ну я выберу первый вариант и не ебет.
+А что?"
+label_settings = SubResource("LabelSettings_xwouu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="second" type="TextureButton" parent="text_bg"]
+offset_left = 31.9999
+offset_top = 288.0
+offset_right = 392.0
+offset_bottom = 436.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_2dum8")
+
+[node name="text" type="Label" parent="text_bg/second"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 342.0
+offset_bottom = 137.0
+text = "Ну я выберу второй вариант и не ебет.
+А что, должно?"
+label_settings = SubResource("LabelSettings_xwouu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="end" type="TextureButton" parent="text_bg"]
+visible = false
+offset_left = -144.0
+offset_top = 288.0
+offset_right = 216.0
+offset_bottom = 436.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_2dum8")
+
+[node name="text" type="Label" parent="text_bg/end"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 342.0
+offset_bottom = 137.0
+text = "Завершить диалог!"
+label_settings = SubResource("LabelSettings_xwouu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="text_bg/first" to="." method="_on_first_pressed"]
+[connection signal="pressed" from="text_bg/second" to="." method="_on_second_pressed"]
+[connection signal="pressed" from="text_bg/end" to="." method="_on_end_pressed"]
