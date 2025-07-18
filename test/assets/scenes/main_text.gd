@@ -11,4 +11,4 @@ var text1 = "Я ебал собак и детей
 
 
 func _on__pressed() -> void:
-	
+	pass

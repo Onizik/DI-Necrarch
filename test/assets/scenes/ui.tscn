@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://c070dm6b0nqtj"]
+
+[ext_resource type="Texture2D" uid="uid://b15xlis7k5oja" path="res://assets/sprites/test/ui/bg.png" id="1_252mf"]
+[ext_resource type="Script" uid="uid://jou3wr3r1a8c" path="res://assets/scenes/ui.gd" id="1_vtcha"]
+[ext_resource type="Texture2D" uid="uid://bj6gt7p65g278" path="res://assets/sprites/test/ui/influence.png" id="2_vtcha"]
+[ext_resource type="Texture2D" uid="uid://v0fnarpbnnpv" path="res://assets/sprites/test/ui/fear.png" id="3_7013b"]
+[ext_resource type="Texture2D" uid="uid://d3hgsa60au7lu" path="res://assets/sprites/test/ui/glory.png" id="4_iadm1"]
+[ext_resource type="Texture2D" uid="uid://bvs3qcwuim000" path="res://assets/sprites/test/ui/eye.png" id="5_8i7bg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ejtgv"]
+font_size = 39
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Node2D"]
+script = ExtResource("1_vtcha")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(960, 100)
+texture = ExtResource("1_252mf")
+
+[node name="influence" type="Sprite2D" parent="bg"]
+position = Vector2(240, 0)
+texture = ExtResource("2_vtcha")
+
+[node name="text" type="Label" parent="bg/influence"]
+z_index = 1
+offset_left = -40.0
+offset_top = -14.0
+offset_right = 32.0
+offset_bottom = 50.0
+text = "25"
+label_settings = SubResource("LabelSettings_ejtgv")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="fear" type="Sprite2D" parent="bg"]
+position = Vector2(480, 0)
+texture = ExtResource("3_7013b")
+
+[node name="text" type="Label" parent="bg/fear"]
+z_index = 1
+offset_left = -40.0
+offset_top = -14.0
+offset_right = 32.0
+offset_bottom = 50.0
+text = "25"
+label_settings = SubResource("LabelSettings_ejtgv")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="glory" type="Sprite2D" parent="bg"]
+texture = ExtResource("4_iadm1")
+
+[node name="text" type="Label" parent="bg/glory"]
+z_index = 1
+offset_left = -40.0
+offset_top = -14.0
+offset_right = 32.0
+offset_bottom = 50.0
+text = "25"
+label_settings = SubResource("LabelSettings_ejtgv")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="insight" type="Sprite2D" parent="bg"]
+position = Vector2(720, 0)
+texture = ExtResource("5_8i7bg")
+
+[node name="text" type="Label" parent="bg/insight"]
+z_index = 1
+offset_left = -40.0
+offset_top = -14.0
+offset_right = 32.0
+offset_bottom = 50.0
+text = "25"
+label_settings = SubResource("LabelSettings_ejtgv")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

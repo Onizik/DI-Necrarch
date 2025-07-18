@@ -10,10 +10,12 @@ func _on_first_pressed() -> void:
 		Я так и думал. На самом деле ты просто решил жмать первую кнопку чтобы проверить, а будет ли тут какой-то текст, не так ли?
 		Оказалось, тебя так легко прочитать."
 		one = true
+		$"/root/Global".fear +=10
 	else: if !two:
 		$text_bg/main_text.text += "
 		Сань, хуй соси! ок?"
 		two = true
+		$"/root/Global".influence +=10
 
 
 func _on_second_pressed() -> void:
@@ -21,10 +23,12 @@ func _on_second_pressed() -> void:
 		$text_bg/main_text.text += "
 		Нихуя себе. Не ждал от тебя такого!"
 		one = true
+		$"/root/Global".glory +=10
 	else: if !two:
 		$text_bg/main_text.text += "
 		Ладно, понял..."
 		two = true
+		$"/root/Global".insight +=10
 
 
 
